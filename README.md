@@ -4,7 +4,7 @@
 
 #### A Fixed-bottom Drawer plugin.  An aspiring enterprise ready flexible drawer plugin.
 ---
-**[Example Page(Coming soon)](http://josephjung.co.nf)** 
+**[Example Page](http://josephjung.co.nf/projects/jDrawer/)** 
 
 ---
 

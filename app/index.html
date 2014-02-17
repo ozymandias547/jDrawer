@@ -33,8 +33,8 @@
 
         <div class="jumbotron">
             <h1>Drawer Plugin Demo</h1>
-            <p>Author: <a>Joseph Jung</a></p>
-            <p>Github: <a>coming soon</a></p>
+            <p>Author: <a href="http://josephjung.co.nf">Joseph Jung</a></p>
+            <p>Github: <a href="http://github.com/ozymandias547/jDrawer">jDrawer repo</a></p>
         </div>
 
         <div class="row marketing">
@@ -92,6 +92,9 @@
     <div class="j-drawer">
         <div class="j-drawer-container">
             <div class="j-bar">
+                
+            <!-- Start of tabLinks -->
+            <div class="j-bar">
                 <a class="j-tablink" data-open="tab1" data-disabled>disabled</a>
                 <a class="j-tablink" data-open="tab3" data-mobile>mobile</a>
                 <a class="j-tablink" data-open="tab4" data-desktop>desktop</a>
@@ -104,9 +107,11 @@
                 <a class="j-tablink" data-toggle>toggle</a>
                 <a class="j-tablink" data-toggle-on data-desktop>+</a>
                 <a class="j-tablink" data-toggle-off>-</a>
-
             </div>
+            <!-- End of tabLinks -->
 
+            
+            <!-- Start of tabs -->
             <div class="j-content">
                 <div class="j-tab" id="tab1">This content shouldn't be visible! stop hacking stuff</div>
                 <div class="j-tab" id="tab2">Opening a drawer without clicking on a tabLink will go to this tab.</div>
@@ -136,6 +141,9 @@
                 </div>
                 <div class="j-tab" id="tab7">hi</div>
             </div>
+            <!-- end of tabs -->
+        
+
         </div>
     </div>
 
@@ -144,23 +152,6 @@
     <script src="bower_components/jquery/jquery.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-    (function(b, o, i, l, e, r) {
-        b.GoogleAnalyticsObject = l;
-        b[l] || (b[l] = function() {
-            (b[l].q = b[l].q || []).push(arguments)
-        });
-        b[l].l = +new Date;
-        e = o.createElement(i);
-        r = o.getElementsByTagName(i)[0];
-        e.src = '//www.google-analytics.com/analytics.js';
-        r.parentNode.insertBefore(e, r)
-    }(window, document, 'script', 'ga'));
-    ga('create', 'UA-XXXXX-X');
-    ga('send', 'pageview');
-    </script>
 
     <!-- build:js scripts/plugins.js -->
     <script src="bower_components/bootstrap/js/affix.js"></script>
@@ -178,9 +169,11 @@
     <!-- endbuild -->
 
     <!-- build:js({app,.tmp}) scripts/main.js -->
-    <script src="scripts/main.js"></script>
     <script src="scripts/jDrawer.js"></script>
+    <script src="scripts/main.js"></script>
     <!-- endbuild -->
+    
+     
 </body>
 
 </html>
