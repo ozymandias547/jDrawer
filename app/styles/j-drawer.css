@@ -19,8 +19,10 @@
 			color: black;
 			border: none;
 			background-color: transparent;
-		}.j-drawer .j-bar .j-tablink:hover{
-			color: red;
+			outline: none;
+		}
+		.j-drawer .j-bar .j-tablink:focus{
+			border: none;
 		}
 		.j-drawer .j-bar .j-tablink.active{
 			color: red;
@@ -79,8 +81,8 @@
 		transition: .8s;
 	    -ms-transition: .8s;
 	    -o-transition: .8s;
-	    -webkit-transition: .8s;-moz-
-	    transition: .8s;
+	    -webkit-transition: .8s;
+	    -moz-transition: .8s;
 	  }
 
 	.j-drawer .j-drawer-container.CSS3.notransition {

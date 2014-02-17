@@ -102,12 +102,24 @@
 
                 if ($(this).data("toggle-on") == "") {
                     $(this).addClass("toggle-on")
-                }   
+                }
 
                 if ($(this).data("toggle-off") == "") {
                     $(this).addClass("toggle-off")
                 }
+
+                if (typeof $(this).data("href") !== "undefined" && $(this).data("href") !== "" && $(this).data("lazy-load") !== "") {
+
+                    var href = $(this).data("href");
+                    var $tab = that.$el.find("#" + $(this).data("open"))
+
+                    that.loadAjaxIntoTab($tab, href, function() { });
+                }
             })
+        },
+
+        loadAjaxIntoTab: function($tab, href, cb) {
+            $tab.load(href, cb)
         },
 
         listen: function() {
@@ -290,6 +302,12 @@
                 return;
             }
 
+            if ($clickedTab.data("lazy-load") == "" && $clickedTab.data("href")) {
+                var href = $clickedTab.data("href");
+                var $tab = this.$el.find("#" + $clickedTab.data("open"))
+                this.loadAjaxIntoTab($tab, href, function() { });
+            }
+
             if (!isOpen) {
 
                 this.open();
@@ -378,7 +396,7 @@
         },
 
         onResize: function() {
-            
+
             if (!this.css3Animations) {
                 if (this.isOpen()) {
                     if (this.isMobile()) {
@@ -420,13 +438,12 @@
                 } else {
 
                     if (this.isMobile()) {
-                        console.log("getting mobile height")
                         this.$contentContainer.css("height", this.getMobileHeight() + "px");
                         this.$drawerContainer.css({
                             "-webkit-transform": "translate3d(0, " + this.getMobileHeight() + "px, 0)"
                         })
 
-                        
+
                     } else {
                         this.$contentContainer.css("height", this.fixedHeight + "px");
                         this.$drawerContainer.css({
