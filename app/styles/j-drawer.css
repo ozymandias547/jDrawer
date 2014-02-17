@@ -17,6 +17,8 @@
 			padding: 5px 10px;
 			white-space: nowrap;
 			color: black;
+			border: none;
+			background-color: transparent;
 		}.j-drawer .j-bar .j-tablink:hover{
 			color: red;
 		}
@@ -37,6 +39,7 @@
 	.jDrawer-open .j-drawer .j-bar .j-tablink.toggle-on {
 	  display: none;
 	}
+
 	.j-drawer .j-bar .toggle-on,
 	.jDrawer-open .j-drawer .j-bar .j-tablink.toggle-off {
 	  display: inline-block;
@@ -50,20 +53,10 @@
 		max-width: 800px;
 		background-color: white;
 		overflow: auto;
+		/*height: 300px;*/
 	}
-	.j-drawer .j-content.CSS3 {
-		-moz-transition: .5s linear;
-	    -ms-transition: .5s linear;
-	    -o-transition: .5s linear;
-	    -webkit-transition: .5s linear;
-	    transition: .5s linear;
-	    -webkit-transform: translate3d(0, 0, 0);
-
-	    height: 0px;
-	}
-	.j-drawer .j-content.CSS3.open {
-	}
-
+	
+	
 
 		.j-drawer .j-content .j-tab {
 			display: none;
@@ -80,8 +73,23 @@
 		-webkit-box-shadow: 0px -2px 11px 0px rgba(50, 50, 50, 0.68);
 		-moz-box-shadow:    0px -2px 11px 0px rgba(50, 50, 50, 0.68);
 		box-shadow:         0px -2px 11px 0px rgba(50, 50, 50, 0.68);
-	}
 
+	}
+	.j-drawer .j-drawer-container.CSS3 {
+		transition: .8s;
+	    -ms-transition: .8s;
+	    -o-transition: .8s;
+	    -webkit-transition: .8s;-moz-
+	    transition: .8s;
+	  }
+
+	.j-drawer .j-drawer-container.CSS3.notransition {
+		  -webkit-transition: none !important;
+		  -moz-transition: none !important;
+		  -o-transition: none !important;
+		  -ms-transition: none !important;
+		  transition: none !important;
+	}
 
 @media screen and (min-width: 768px) {
    .j-drawer .j-bar .j-tablink.desktopOnly{

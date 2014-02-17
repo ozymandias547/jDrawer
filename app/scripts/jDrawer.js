@@ -18,11 +18,12 @@
 
         //DOM handles
         this.$el = $(".j-drawer");
+        this.$drawerContainer = $(".j-drawer-container");
         this.$bar = this.$el.find(".j-bar");
         this.$tabLinks = this.$el.find(".j-tablink");
         this.$contentContainer = this.$el.find(".j-content");
         this.$tabs = this.$el.find(".j-tab");
-        
+
         //More convenient settings
         this.fixedHeight = this.options.fixedHeight;
         this.mobileBreakpoint = this.options.mobileBreakpoint;
@@ -42,10 +43,44 @@
 
         init: function() {
 
+            this.initTabLinks();
+
+            //Set CSS3 animations or callbacks based upon settings or system abilites 
+            if (!this.supportsTransitions()) {
+                this.css3Animations = this.options.css3Animations = false;
+            } else if (this.supportsTransitions() && this.css3Animations) {
+                this.initCSS3Animations();
+            } else {
+                this.css3Animations = this.options.css3Animations = false;
+            }
+
+        },
+
+        initCSS3Animations: function() {
+            if (this.fixedHeight) {
+                if (!this.isMobile()) {
+                    this.$contentContainer.css("height", this.fixedHeight + "px")
+                    this.$drawerContainer.css({
+                        "-webkit-transform": "translate3d(0 , " + this.fixedHeight + "px,0)"
+                    })
+                    this.$contentContainer.css("height", this.fixedHeight + "px")
+                } else {
+                    this.$contentContainer.css("height", this.getMobileHeight() + "px");
+                    this.$drawerContainer.css({
+                        "-webkit-transform": "translate3d(0 , " + this.getMobileHeight() + "px,0)"
+                    })
+                }
+
+            }
+        },
+
+        initTabLinks: function() {
+
             var that = this;
 
-            //parse data labels and add correct classes (If this is causing FOUC, the classes can be applied directly to the html)
             this.$tabLinks.each(function() {
+
+                //TODO: convert to switch
 
                 if ($(this).data("disabled") == "") $(this).addClass("disabled");
 
@@ -67,30 +102,20 @@
 
                 if ($(this).data("toggle-on") == "") {
                     $(this).addClass("toggle-on")
-                }
+                }   
 
                 if ($(this).data("toggle-off") == "") {
                     $(this).addClass("toggle-off")
                 }
-
-
             })
-
-            //Detect for CSS3 transitions && flag jQuery fallback regardless of settings if CSS3 not supported.
-            if (!this.supportsTransitions()) {
-                this.css3Animations = this.options.css3Animations = false;
-            } else if (this.supportsTransitions() && this.css3Animations) {
-                this.$contentContainer.addClass("CSS3")
-            }
-
         },
 
         listen: function() {
 
             //user $.proxy to call event functions with context set as our normal "this" (like .bind(this))
             $("body").on("click touchstart", $.proxy(this.close, this));
-            $(window).resize(this.throttle($.proxy(this.onResize, this), 100));	//throttle resize events
-            window.addEventListener("orientationchange", function() {})
+            $(window).resize(this.throttle($.proxy(this.onResize, this), 100)); //throttle resize events
+            // window.addEventListener("orientationchange", function() {})
 
             this.$bar.on("click touchstart", $.proxy(this.toggle, this));
             this.$tabLinks.on("click touchstart", $.proxy(this.onTabLinkClick, this));
@@ -112,18 +137,27 @@
         open: function() {
             $("html").addClass("jDrawer-open");
 
+
             if (this.isMobile()) {
 
                 var mobileHeight = $(window).outerHeight() - this.$bar.height();
+
+
 
                 if (!this.css3Animations) {
                     this.$contentContainer.animate({
                         "height": mobileHeight + "px"
                     }, this.drawerOpenSpeed)
                 } else {
+                    //CSS3
+                    this.$drawerContainer.addClass("CSS3")
                     this.$contentContainer.css({
                         "height": mobileHeight + "px"
                     })
+                    this.$drawerContainer.css({
+                        "-webkit-transform": "translate3d(0, 0, 0)"
+                    })
+
                 }
 
             } else {
@@ -142,10 +176,18 @@
                         this.$contentContainer.slideDown(this.drawerOpenSpeed);
                     }
                 } else {
+                    this.$drawerContainer.addClass("CSS3")
                     if (this.fixedHeight) {
-                        this.$contentContainer.css("height", this.fixedHeight + "px");
+
+                        this.$contentContainer.css({
+                            "height": this.fixedHeight + "px"
+                        })
+
+                        this.$drawerContainer.css({
+                            "-webkit-transform": "translate3d(0, 0, 0)"
+                        })
                     } else {
-                        this.$contentContainer.css("max-height");
+                        // this.$contentContainer.css("max-height");
                     }
                 }
             }
@@ -161,16 +203,40 @@
                 $(this).removeClass("active")
             })
 
+            var mobileHeight = this.getMobileHeight();
 
-            if (!this.css3Animations) {
-                this.$contentContainer.animate({
-                    "height": "0px"
-                }, this.drawerCloseSpeed)
+            if (this.isMobile()) {
+                if (!this.css3Animations) {
+                    this.$contentContainer.animate({
+                        "height": "0px"
+                    }, this.drawerCloseSpeed)
+                } else {
+                    //CSS3
+                    this.$contentContainer.css("height", this.getMobileHeight() + "px");
+                    this.$drawerContainer.css({
+                        "-webkit-transform": "translate3d(0, " + mobileHeight + "px, 0)"
+                    })
+                }
             } else {
-                this.$contentContainer.css("height", "0px");
+
+                if (!this.css3Animations) {
+                    this.$contentContainer.animate({
+                        "height": "0px"
+                    }, this.drawerCloseSpeed)
+                } else {
+                    //CSS3
+
+                    this.$drawerContainer.css({
+                        "-webkit-transform": "translate3d(0, " + this.fixedHeight + "px, 0)"
+                    })
+                }
             }
 
 
+        },
+
+        getMobileHeight: function() {
+            return $(window).outerHeight() - this.$bar.height();
         },
 
         /* Sync the tabLabel and tab
@@ -312,27 +378,18 @@
         },
 
         onResize: function() {
-            if (this.isOpen()) {
-                if (this.isMobile()) {
+            
+            if (!this.css3Animations) {
+                if (this.isOpen()) {
+                    if (this.isMobile()) {
+                        var mobileHeight = $(window).outerHeight() - this.$bar.height();
 
-                    var mobileHeight = $(window).outerHeight() - this.$bar.height();
-
-                    if (!this.css3Animations) {
                         this.$contentContainer.css({
                             "height": mobileHeight + "px"
                         })
+
+                        // this.handleMobileTabs();
                     } else {
-                        this.$contentContainer.css({
-                            "height": mobileHeight + "px"
-                        })
-                    }
-
-                    // this.handleMobileTabs();
-
-                } else {
-
-
-                    if (!this.css3Animations) {
                         if (this.fixedHeight) {
                             this.$contentContainer.css({
                                 "height": this.fixedHeight + "px"
@@ -342,19 +399,44 @@
                                 "height": "auto"
                             });
                         }
+                        // this.handleDesktopTabs();
+                    }
+                }
+            } else {
+                this.$drawerContainer.addClass("notransition");
+                if (this.isOpen()) {
+                    if (this.isMobile()) {
+                        this.$contentContainer.css("height", this.getMobileHeight() + "px");
+
+                        if (this.isOpen()) {
+                            this.open();
+                        }
                     } else {
-                        if (this.fixedHeight) {
-                            this.$contentContainer.css({
-                                "height": this.fixedHeight + "px"
-                            })
-                        } else {
-                            //TODO: CSS3 animation
+                        this.$contentContainer.css("height", this.fixedHeight + "px");
+                        if (this.isOpen()) {
+                            this.open();
                         }
                     }
+                } else {
 
-                    // this.handleDesktopTabs();
+                    if (this.isMobile()) {
+                        console.log("getting mobile height")
+                        this.$contentContainer.css("height", this.getMobileHeight() + "px");
+                        this.$drawerContainer.css({
+                            "-webkit-transform": "translate3d(0, " + this.getMobileHeight() + "px, 0)"
+                        })
+
+                        
+                    } else {
+                        this.$contentContainer.css("height", this.fixedHeight + "px");
+                        this.$drawerContainer.css({
+                            "-webkit-transform": "translate3d(0, " + this.fixedHeight + "px, 0)"
+                        })
+                    }
+
 
                 }
+                this.$drawerContainer.removeClass("notransition");
             }
         },
 
@@ -382,8 +464,10 @@
         },
 
         isInDrawer: function(target) {
-            return this.$el.find(target).length;
+            return (this.$el.find(target).length > 0 ? true : false);
         },
+
+
 
         supportsTransitions: function() {
             var b = document.body || document.documentElement;
@@ -435,7 +519,9 @@
             }
         },
 
-        now : function() { return new Date().getTime(); }
+        now: function() {
+            return new Date().getTime();
+        }
 
     }
 

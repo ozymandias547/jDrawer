@@ -41,10 +41,11 @@
             <h3>Features</h3>
             <ul>
                 <li>Mobile ready</li>
+                <li>Hardware accelerated animation for silky smooth movements</li>
                 <li>Easily customizable look & feel - CSS easy to override</li>
                 <li>Small size - 6k (2k gZipped)</li>
                 <li>Few dependencies - only jQuery</li>
-                <li>Animations with CSS3 animations w/ jQuery fallback</li>
+                <li>Fully accessible - keyboard navigatable with proper elements</li>
                 <li>Fully customizable tabLink types via data-attributes (see examples)
                     <ul>
                         <li>default link (drawer opens to this tab at first)</li>
@@ -68,9 +69,7 @@
             </ul>
             <h3>Upcoming Features (listed by priority)</h3>
             <ul>
-                <li>Hardware accelerated animation for silky smooth transitions</li>
                 <li>Lazy loading option with ajax support</li>
-                <li>Fully accessible by keyboard</li>
                 <li>Auto Height (currently only does fixed height drawers)</li>
                 <li><a href="http://www.greensock.com/">Greensock</a> animation plugin for better mobile scrolling performance </li>
                 <li>(Possible) Manual resizing of fixed height drawers via drag and drop</li>
@@ -94,18 +93,18 @@
         <div class="j-drawer-container">                
             <!-- Start of tabLinks -->
             <div class="j-bar">
-                <a class="j-tablink" data-open="tab1" data-disabled>disabled</a>
-                <a class="j-tablink" data-open="tab3" data-mobile>mobile</a>
-                <a class="j-tablink" data-open="tab4" data-desktop>desktop</a>
-                <a class="j-tablink" data-open="tab2" data-default>default</a>
-                <a class="j-tablink" data-open="tab5">Dup</a>
-                <a class="j-tablink" data-open="tab5">Dup</a>
-                <a class="j-tablink" data-open="tab6">Length</a>
-                <a class="j-tablink" data-open="tab7" href="http://someAJAX.com/stuff">AJAX</a>
+                <button class="j-tablink" data-open="tab1" data-disabled>disabled</button>
+                <button class="j-tablink" data-open="tab3" data-mobile>mobile</button>
+                <button class="j-tablink" data-open="tab4" data-desktop>desktop</button>
+                <button class="j-tablink" data-open="tab2" data-default>default</button>
+                <button class="j-tablink" data-open="tab5">Accessibility</button>
+                <button class="j-tablink" data-open="tab5">Accessibility2</button>
+                <button class="j-tablink" data-open="tab6">Length</button>
+                <button class="j-tablink" data-href="http://localhost:8000/template.html" data-open="tab7" href="http://someAJAX.com/stuff">AJAX</button>
 
-                <a class="j-tablink" data-toggle>toggle</a>
-                <a class="j-tablink" data-toggle-on data-desktop>+</a>
-                <a class="j-tablink" data-toggle-off>-</a>
+                <button class="j-tablink" href="" data-toggle>toggle</button>
+                <button class="j-tablink" href="" data-toggle-on data-desktop>+</button>
+                <button class="j-tablink" href="" data-toggle-off>-</button>
             </div>
             <!-- End of tabLinks -->
 
@@ -116,7 +115,11 @@
                 <div class="j-tab" id="tab2">Opening a drawer without clicking on a tabLink will go to this tab.</div>
                 <div class="j-tab" id="tab3">Demonstrates a mobile only tab</div>
                 <div class="j-tab" id="tab4">Demonstrates a desktop only tab</div>
-                <div class="j-tab" id="tab5">This tab is opened by 2 tabs demoing the ability to have multiple tabLinks for one tab.</div>
+                <div class="j-tab" id="tab5">This tab is opened by 2 tabs demoing the ability to have multiple tabLinks for one tab.
+                    <a href="#">accessibility test</a>
+                    <a href="#">accessibility test</a>
+                    <a href="#">accessibility test</a>
+                </div>
                 <div class="j-tab" id="tab6">
                     <p>Bacon ipsum dolor sit amet kevin pork belly sausage sirloin doner. Turducken prosciutto tri-tip doner, tail capicola shoulder jowl landjaeger biltong brisket. Corned beef turducken hamburger meatball shank pork loin venison pancetta. Sausage frankfurter t-bone pork brisket pork loin. Short loin leberkas filet mignon, bacon shoulder turducken tail flank bresaola brisket beef ribs doner. Pastrami turducken sirloin shankle, shank bacon bresaola venison ham shoulder pork loin flank ribeye cow.</p>
 
@@ -138,7 +141,7 @@
 
                     <p>T-bone tenderloin short ribs pig. Jowl pork chop strip steak bresaola biltong hamburger venison spare ribs jerky shank chuck pig. Pastrami t-bone salami drumstick ham. Ground round boudin t-bone doner venison frankfurter kielbasa shoulder chuck.</p>
                 </div>
-                <div class="j-tab" id="tab7">hi</div>
+                <div class="j-tab" id="tab7">Turn on the accompanying node server to see AJAX loaded into the drawer.</div>
             </div>
             <!-- end of tabs -->
         
