@@ -59,15 +59,17 @@
         initCSS3Animations: function() {
             if (this.fixedHeight) {
                 if (!this.isMobile()) {
+                    this.$el.css("bottom", negate(this.fixedHeight))
                     this.$contentContainer.css("height", this.fixedHeight + "px")
                     this.$drawerContainer.css({
-                        "-webkit-transform": "translate3d(0 , " + this.fixedHeight + "px,0)"
+                        "-webkit-transform": "translate3d(0, 0, 0)"
                     })
                     this.$contentContainer.css("height", this.fixedHeight + "px")
                 } else {
+                    this.$el.css("bottom", negate(this.getMobileHeight()))
                     this.$contentContainer.css("height", this.getMobileHeight() + "px");
                     this.$drawerContainer.css({
-                        "-webkit-transform": "translate3d(0 , " + this.getMobileHeight() + "px,0)"
+                        "-webkit-transform": "translate3d(0 ,0, 0)"
                     })
                 }
 
@@ -149,25 +151,23 @@
         open: function() {
             $("html").addClass("jDrawer-open");
 
+           
 
             if (this.isMobile()) {
 
-                var mobileHeight = $(window).outerHeight() - this.$bar.height();
-
-
-
                 if (!this.css3Animations) {
                     this.$contentContainer.animate({
-                        "height": mobileHeight + "px"
+                        "height": this.getMobileHeight() + "px"
                     }, this.drawerOpenSpeed)
                 } else {
-                    //CSS3
                     this.$drawerContainer.addClass("CSS3")
+                    
+                    this.$el.css({"bottom" : negate(this.getMobileHeight())})
                     this.$contentContainer.css({
-                        "height": mobileHeight + "px"
+                        "height": this.getMobileHeight() + "px"
                     })
                     this.$drawerContainer.css({
-                        "-webkit-transform": "translate3d(0, 0, 0)"
+                        "-webkit-transform": "translate3d(0, " + negate(this.getMobileHeight()) + "px, 0)"
                     })
 
                 }
@@ -191,12 +191,13 @@
                     this.$drawerContainer.addClass("CSS3")
                     if (this.fixedHeight) {
 
+                        this.$el.css({"bottom" : negate(this.fixedHeight)})
                         this.$contentContainer.css({
                             "height": this.fixedHeight + "px"
                         })
 
                         this.$drawerContainer.css({
-                            "-webkit-transform": "translate3d(0, 0, 0)"
+                            "-webkit-transform": "translate3d(0, " + negate(this.fixedHeight) + "px, 0)"
                         })
                     } else {
                         // this.$contentContainer.css("max-height");
@@ -224,9 +225,10 @@
                     }, this.drawerCloseSpeed)
                 } else {
                     //CSS3
+                    this.$el.css({"bottom" : negate(this.getMobileHeight())})
                     this.$contentContainer.css("height", this.getMobileHeight() + "px");
                     this.$drawerContainer.css({
-                        "-webkit-transform": "translate3d(0, " + mobileHeight + "px, 0)"
+                        "-webkit-transform": "translate3d(0, 0, 0)"
                     })
                 }
             } else {
@@ -237,9 +239,9 @@
                     }, this.drawerCloseSpeed)
                 } else {
                     //CSS3
-
+                    this.$el.css({"bottom" : negate(this.fixedHeight)})
                     this.$drawerContainer.css({
-                        "-webkit-transform": "translate3d(0, " + this.fixedHeight + "px, 0)"
+                        "-webkit-transform": "translate3d(0, 0, 0)"
                     })
                 }
             }
@@ -424,12 +426,14 @@
                 this.$drawerContainer.addClass("notransition");
                 if (this.isOpen()) {
                     if (this.isMobile()) {
+                        this.$el.css({"bottom" : negate(this.getMobileHeight())})
                         this.$contentContainer.css("height", this.getMobileHeight() + "px");
 
                         if (this.isOpen()) {
                             this.open();
                         }
                     } else {
+                        this.$el.css({"bottom" : negate(this.fixedHeight)})
                         this.$contentContainer.css("height", this.fixedHeight + "px");
                         if (this.isOpen()) {
                             this.open();
@@ -439,15 +443,19 @@
 
                     if (this.isMobile()) {
                         this.$contentContainer.css("height", this.getMobileHeight() + "px");
+                        
+                        this.$el.css({"bottom" : negate(this.getMobileHeight())})
+
                         this.$drawerContainer.css({
-                            "-webkit-transform": "translate3d(0, " + this.getMobileHeight() + "px, 0)"
+                            "-webkit-transform": "translate3d(0, 0, 0)"
                         })
 
 
                     } else {
+                        this.$el.css({"bottom" : negate(this.fixedHeight)})
                         this.$contentContainer.css("height", this.fixedHeight + "px");
                         this.$drawerContainer.css({
-                            "-webkit-transform": "translate3d(0, " + this.fixedHeight + "px, 0)"
+                            "-webkit-transform": "translate3d(0, 0, 0)"
                         })
                     }
 
@@ -540,6 +548,10 @@
             return new Date().getTime();
         }
 
+    }
+
+    function negate(value) {
+        return (value * -1);
     }
 
     window.jDrawer = jDrawer;

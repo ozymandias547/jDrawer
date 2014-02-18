@@ -18,9 +18,9 @@ app.configure(function() {
   app.use(express.static(__dirname + '/'));
 });
 
-// app.get('/', function(req, res){
-// 	res.redirect('/app/index.html')
-// })
+app.get('/', function(req, res){
+	res.redirect('/app/index.html')
+})
 
 app.get('/template', function(req, res){
 	res.end("This data has been returned from the server.  This proves that AJAX is working.")

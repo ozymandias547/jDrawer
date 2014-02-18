@@ -1,7 +1,7 @@
 .j-drawer {
 	position: fixed;
 	width: 100%;
-	bottom: 0px;
+	bottom: -300px;
 }
 
 	.j-drawer .j-bar {
@@ -12,11 +12,9 @@
 	}
 
 		.j-drawer .j-bar .j-tablink{
-			color: white;
 			display: inline-block;
 			padding: 5px 10px;
 			white-space: nowrap;
-			color: black;
 			border: none;
 			background-color: transparent;
 			outline: none;

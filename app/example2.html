@@ -21,7 +21,7 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/j-drawer.css">
-    <link rel="stylesheet" href="styles/example1.css">
+    <link rel="stylesheet" href="styles/example2.css">
     <!-- endbuild -->
     <script src="bower_components/modernizr/modernizr.js"></script>
 
@@ -40,10 +40,8 @@
 
         <div class="row marketing">
             <h3>Other examples</h3>
-                <li><a href="example1.html">Implementation Example 1</a>
-            </li>
-            <!-- <li><a href="example2.html">Implementation Example 2</a>
-            </li> -->
+                <li><a href="example1.html">Implementation Example 1</a></li>
+                <li><a href="example2.html">Implementation Example 2</a></li>
             <h3>Features</h3>
             <ul>
                 <li>Mobile ready</li>
@@ -177,22 +175,10 @@
     <!-- endbuild -->
 
     <!-- build:js({app,.tmp}) scripts/main.js -->
-    <script type="text/javascript" src="scripts/jDrawer.js"></script>
-    
+    <script src="scripts/jDrawer.js"></script>
+    <script src="scripts/main.js"></script>
     <!-- endbuild -->
-    <script>
-        $(document).ready(function() {
-
-            var myDrawer = new jDrawer({
-                fixedHeight : 300,          //Make the drawer a fixed height. If not set, height will be set to "auto"
-                mobileBreakpoint : 800,     //The breaktpoint when the drawer will go full screen.
-                labelClose : false,         //If true, clicking on active tabLabels will close the drawer
-                css3Animations : true,      //If false, will force jQuery animation.  Otherwise, CSS3 animations will be attempted with a jQuery fallback.
-                drawerOpenSpeed: 500,       //jQuery animation speed (control CSS speed in CSS file)
-                drawerCloseSpeed: 500       //jQuery animation speed (control CSS speed in CSS file)
-            });
-        })
-    </script>
+    
      
 </body>
 
