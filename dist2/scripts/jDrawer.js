@@ -61,27 +61,19 @@
                 if (!this.isMobile()) {
                     this.$el.css("bottom", negate(this.fixedHeight))
                     this.$contentContainer.css("height", this.fixedHeight + "px")
+                    this.$drawerContainer.css({
+                        "-webkit-transform": "translate3d(0, 0, 0)"
+                    })
+                    this.$contentContainer.css("height", this.fixedHeight + "px")
                 } else {
                     this.$el.css("bottom", negate(this.getMobileHeight()))
                     this.$contentContainer.css("height", this.getMobileHeight() + "px");
+                    this.$drawerContainer.css({
+                        "-webkit-transform": "translate3d(0 ,0, 0)"
+                    })
                 }
 
-            } else {
-                if (!this.isMobile()) {
-                    this.$el.css("bottom", negate(this.fixedHeight))
-                    this.$contentContainer.css("height", this.fixedHeight + "px")
-                   
-                } else {
-                    this.$el.css("bottom", negate(this.getMobileHeight()))
-                    this.$contentContainer.css("height", this.getMobileHeight() + "px");
-                }
             }
-            this.$drawerContainer.css({
-                "-webkit-transform": "translate3d(0, 0, 0)",
-                "-moz-transform": "translate3d(0, 0, 0)",
-                "-o-transform": "translate3d(0, 0, 0)",
-                "transform": "translate3d(0, 0, 0)"
-            })
         },
 
         initTabLinks: function() {
@@ -175,10 +167,7 @@
                         "height": this.getMobileHeight() + "px"
                     })
                     this.$drawerContainer.css({
-                        "-webkit-transform": "translate3d(0, " + negate(this.getMobileHeight()) + "px, 0)",
-                        "-moz-transform": "translate3d(0, " + negate(this.getMobileHeight()) + "px, 0)",
-                        "-0-transform": "translate3d(0, " + negate(this.getMobileHeight()) + "px, 0)",
-                        "transform": "translate3d(0, " + negate(this.getMobileHeight()) + "px, 0)"
+                        "-webkit-transform": "translate3d(0, " + negate(this.getMobileHeight()) + "px, 0)"
                     })
 
                 }
@@ -208,10 +197,7 @@
                         })
 
                         this.$drawerContainer.css({
-                            "-webkit-transform": "translate3d(0, " + negate(this.fixedHeight) + "px, 0)",
-                            "-moz-transform": "translate3d(0, " + negate(this.fixedHeight) + "px, 0)",
-                            "-o-transform": "translate3d(0, " + negate(this.fixedHeight) + "px, 0)",
-                            "transform": "translate3d(0, " + negate(this.fixedHeight) + "px, 0)"
+                            "-webkit-transform": "translate3d(0, " + negate(this.fixedHeight) + "px, 0)"
                         })
                     } else {
                         // this.$contentContainer.css("max-height");
@@ -242,10 +228,7 @@
                     this.$el.css({"bottom" : negate(this.getMobileHeight())})
                     this.$contentContainer.css("height", this.getMobileHeight() + "px");
                     this.$drawerContainer.css({
-                        "-webkit-transform": "translate3d(0, 0, 0)",
-                        "-moz-transform": "translate3d(0, 0, 0)",
-                        "-o-transform": "translate3d(0, 0, 0)",
-                        "transform": "translate3d(0, 0, 0)"
+                        "-webkit-transform": "translate3d(0, 0, 0)"
                     })
                 }
             } else {
@@ -258,10 +241,7 @@
                     //CSS3
                     this.$el.css({"bottom" : negate(this.fixedHeight)})
                     this.$drawerContainer.css({
-                        "-webkit-transform": "translate3d(0, 0, 0)",
-                        "-moz-transform": "translate3d(0, 0, 0)",
-                        "-o-transform": "translate3d(0, 0, 0)",
-                        "transform": "translate3d(0, 0, 0)"
+                        "-webkit-transform": "translate3d(0, 0, 0)"
                     })
                 }
             }
@@ -273,22 +253,54 @@
             return $(window).outerHeight() - this.$bar.height();
         },
 
+        /* Sync the tabLabel and tab
+         */
+        sync: function(target) {
+
+        },
+
+        handleDataToggle: function(e) {
+            this.toggle(e);
+        },
+
+        handleDataToggleOn: function(e) {
+            if (!this.isOpen()) {
+                this.open();
+                this.sync();
+            }
+        },
+
+        handleDataToggleOff: function(e) {
+            if (this.isOpen()) {
+                this.close();
+                this.sync();
+            }
+        },
+
         onTabLinkClick: function(e) {
 
             e.stopPropagation();
             e.preventDefault();
 
             var $clickedTab = $(e.target);
-            if (!$clickedTab.hasClass("j-tablink")) $clickedTab = $clickedTab.closest(".j-tablink")
             var isOpen = this.isOpen();
-
 
             if ($clickedTab.data("disabled") == "") {
                 return;
             }
 
-            if ($clickedTab.data("toggle") == "" || $clickedTab.data("toggle-on") == "" || $clickedTab.data("toggle-off") == "") {
-                this.toggle(e);
+            if ($clickedTab.data("toggle") == "") {
+                this.handleDataToggle(e);
+                return;
+            }
+
+            if ($clickedTab.data("toggle-on") == "") {
+                this.handleDataToggleOn(e);
+                return;
+            }
+
+            if ($clickedTab.data("toggle-off") == "") {
+                this.handleDataToggleOff(e);
                 return;
             }
 
@@ -299,13 +311,11 @@
             }
 
             if (!isOpen) {
-                
-                if ($clickedTab) {
-                    this.open();
-                    this.hideTabs();
-                    this.openTab($clickedTab.data("open"));
-                    this.activateTabLink($clickedTab);
-                }
+
+                this.open();
+                this.hideTabs();
+                this.openTab($clickedTab.data("open"));
+                this.openTabLink($clickedTab);
 
             } else if (isOpen && $clickedTab.hasClass("active") && typeof this.labelClose !== "undefined" && this.labelClose) {
 
@@ -316,22 +326,17 @@
 
                 this.hideTabs();
                 this.openTab($clickedTab.data("open"));
-                this.activateTabLink($clickedTab);
+                this.openTabLink($clickedTab);
 
             }
 
         },
 
-        activateTabLink: function($link) {
-
-
-
-            
+        openTabLink: function($link) {
 
             this.$tabLinks.each(function() {
                 $(this).removeClass("active")
             })
-
             $link.addClass("active")
 
         },
@@ -442,10 +447,7 @@
                         this.$el.css({"bottom" : negate(this.getMobileHeight())})
 
                         this.$drawerContainer.css({
-                            "-webkit-transform": "translate3d(0, 0, 0)",
-                            "-moz-transform": "translate3d(0, 0, 0)",
-                            "-o-transform": "translate3d(0, 0, 0)",
-                            "transform": "translate3d(0, 0, 0)"
+                            "-webkit-transform": "translate3d(0, 0, 0)"
                         })
 
 
@@ -453,10 +455,7 @@
                         this.$el.css({"bottom" : negate(this.fixedHeight)})
                         this.$contentContainer.css("height", this.fixedHeight + "px");
                         this.$drawerContainer.css({
-                            "-webkit-transform": "translate3d(0, 0, 0)",
-                            "-moz-transform": "translate3d(0, 0, 0)",
-                            "-o-transform": "translate3d(0, 0, 0)",
-                            "transform": "translate3d(0, 0, 0)"
+                            "-webkit-transform": "translate3d(0, 0, 0)"
                         })
                     }
 
@@ -466,67 +465,18 @@
             }
         },
 
-        //Checks for the proper tab to open when there isn't a data-open attribute isn't present.
-        findDefaultTab : function() {
-
-            var $defaultTabLink = null,
-                that = this;
-
-            this.$tabLinks.each(function() {
-                
-                var $this = $(this);
-
-                if ($this.data("default") === "") {
-                    $defaultTabLink = $this;
-                }
-            })
-
-            if ($defaultTabLink) return $defaultTabLink;
-
-            this.$tabLinks.each(function() {
-                
-                var $this = $(this);
-                
-                if ($this.data("disabled") !== "") {
-                    
-                   if ($this.data("mobile") === "" && that.isMobile()) {
-                        $defaultTabLink = $this;
-                        return false;
-                    }
-                    else if ($this.data("desktop") === "" && !that.isMobile()) {
-                        $defaultTabLink = $this;
-                        return false;
-                    } 
-                    else if ($this.data("mobile") !== "" && $this.data("desktop") !== "") {
-                        $defaultTabLink = $this;
-                        return false;
-                    } 
-                
-                }
-            })
-
-            return $defaultTabLink;
-
-
-        },
-
         toggle: function(e) {
             if (e) e.stopPropagation();
 
             if (this.isOpen()) {
-
                 this.close()
-
             } else {
+                var $defaultTab = this.checkDefaultTab();
+                this.hideTabs();
+                this.openTab($defaultTab.data("open"))
+                $defaultTab.addClass("active")
 
-                var $defaultTab = this.findDefaultTab();
-                if ($defaultTab) {
-                    this.hideTabs();
-                    this.openTab($defaultTab.data("open"))
-                    $defaultTab.addClass("active")
-                    this.open()
-
-                }
+                this.open()
             }
         },
 

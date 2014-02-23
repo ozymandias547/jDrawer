@@ -1,0 +1,40 @@
+.j-drawer .j-drawer-container {
+	border-radius: 5px 5px 0 0;
+}
+
+.j-drawer .j-bar {
+	background-color: #16467A;
+	border-radius: 5px 5px 0 0;
+}
+
+.j-drawer .j-bar .j-tablink {
+	color: white;
+	line-height: 1.8;
+}
+
+.j-drawer .j-content .j-tab.catousel {
+	padding: 0px;
+	padding-top: 10px;
+}
+
+.j-drawer .j-bar .j-tablink.active {
+	color: white;
+	background-image: url('assets/arrow_white.png');
+	background-repeat: no-repeat;
+	background-position: center bottom;
+}
+
+.j-drawer .j-bar .j-tablink.toggle-on,
+.j-drawer .j-bar .j-tablink.toggle-off {
+	background-color: #0088cc;
+	float: right;
+	height: 26px;
+	margin-top: 5px;
+	margin-right: 5px;
+	line-height: 17px;
+	border-radius: 3px;
+}
+
+.carousel-inner>.item>img {
+	width: 100%;
+}
