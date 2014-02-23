@@ -1,6 +1,5 @@
 
-
-# jDrawer plugin &nbsp;
+# jDrawer plugin v0.1 (WIP)&nbsp;
 
 #### A Fixed-bottom Drawer plugin.  An aspiring enterprise ready flexible drawer plugin.
 ---
