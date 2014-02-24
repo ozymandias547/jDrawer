@@ -32,7 +32,7 @@
 }
 
 .j-tablink.toggled img {
-	width: 30px
+	width: 30px;
 	-webkit-transform: rotate(180deg);
 	-moz-transform: rotate(180deg);
 	-o-transform: rotate(180deg);
@@ -64,7 +64,7 @@
 	-mox-transition: 1s ease-in;
 	-o-transition: 1s ease-in;
 	transition: 1s ease-in;
-	
+
 }
 
 .j-tablink.toggled .arrowContainer {

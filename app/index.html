@@ -41,7 +41,7 @@
 
         <div class="row marketing">
             <h3>Other examples</h3>
-            <li><a href="example1.html">Implementation Example 1</a>
+            <li><a href="example1.html">Single Tab Full Screen Example</a>
             </li>
             <!-- <li><a href="example2.html">Implementation Example 2</a>
             </li> -->
@@ -185,13 +185,12 @@
     <script>
     $(document).ready(function() {
         var myDrawer = new jDrawer({
-            // fixedHeight : 300,          //Make the drawer a fixed height. If not set, height will be set to "auto"
-            maxHeight: 300,
-            mobileBreakpoint: 768, //The breaktpoint when the drawer will go full screen.
-            labelClose: true, //If true, clicking on active tabLabels will close the drawer
-            css3Animations: true, //If false, will force jQuery animation.  Otherwise, CSS3 animations will be attempted with a jQuery fallback.
-            drawerOpenSpeed: 500, //jQuery animation speed (control CSS speed in CSS file)
-            drawerCloseSpeed: 500 //jQuery animation speed (control CSS speed in CSS file)
+            fixedHeight : 300,      //Make the drawer a fixed height. If not set, height will be set to "auto"
+            mobileBreakpoint: 768,  //The breaktpoint when the drawer will go full screen.
+            labelClose: true,       //If true, clicking on active tabLabels will close the drawer
+            css3Animations: true,   //If false, will force jQuery animation.  Otherwise, CSS3 animations will be attempted with a jQuery fallback.
+            drawerOpenSpeed: 500,   //jQuery animation speed (control CSS speed in CSS file)
+            drawerCloseSpeed: 500   //jQuery animation speed (control CSS speed in CSS file)
         });
     })
     </script>
