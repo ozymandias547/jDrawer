@@ -34,18 +34,18 @@
 		.j-drawer .j-bar .j-tablink.mobileOnly{
 			display: inline-block;
 		}
+		
+		.j-drawer .j-bar .j-tablink.toggled .openedToggle,
+		.j-drawer .j-bar .j-tablink .closedToggle {
+			display: inline-block;
+		}
 
-	.j-drawer .j-bar .toggle-off,
-	.jDrawer-open .j-drawer .j-bar .j-tablink.toggle-on {
-	  display: none;
-	}
+		.j-drawer .j-bar .j-tablink .openedToggle,
+		.j-drawer .j-bar .j-tablink.toggled .closedToggle {
+			display: none;
+		}
 
-	.j-drawer .j-bar .toggle-on,
-	.jDrawer-open .j-drawer .j-bar .j-tablink.toggle-off {
-	  display: inline-block;
-	}
-	
-	
+
 
 	.j-drawer .j-content{
 		margin: 0px auto;
@@ -53,7 +53,6 @@
 		max-width: 800px;
 		background-color: white;
 		overflow: auto;
-		/*height: 300px;*/
 	}
 	
 	

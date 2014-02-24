@@ -8,7 +8,7 @@
 	background-color: #16467A;
 	border-radius: 5px 5px 0 0;
 	height: 17px;
-	text-align: left;
+	text-align: center;
 }
 
 .j-drawer .j-bar .j-tablink {
@@ -31,27 +31,43 @@
 	width: 100%;
 }
 
-.j-tablink.toggle-on img {
+.j-tablink.toggled img {
 	width: 30px
-}
-.j-tablink.toggle-off img {
-	width: 30px;
 	-webkit-transform: rotate(180deg);
 	-moz-transform: rotate(180deg);
 	-o-transform: rotate(180deg);
 	transform: rotate(180deg);
+
+}
+.j-tablink img {
+	width: 30px;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+
+
+	-webkit-transition: 1s ease-in;
+	-mox-transition: 1s ease-in;
+	-o-transition: 1s ease-in;
+	transition: 1s ease-in;
 }
 
-.j-tablink.toggle-on .arrowContainer {
+.j-tablink .arrowContainer {
 	display: inline-block;
 	position: relative;
 	top: -29px;
 	background-color: #16467A;
 	padding: 5px;
 	border-radius: 29px;
+	-webkit-transition: 1s ease-in;
+	-mox-transition: 1s ease-in;
+	-o-transition: 1s ease-in;
+	transition: 1s ease-in;
+	
 }
 
-.j-tablink.toggle-off .arrowContainer {
+.j-tablink.toggled .arrowContainer {
 	display: inline-block;
 	position: relative;
 	top: -5px;

@@ -1,0 +1,316 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'generator-phaser-mobile',
+1 verbose cli   '-g' ]
+2 info using npm@1.3.5
+3 info using node@v0.10.15
+4 verbose cache add [ 'generator-phaser-mobile', null ]
+5 verbose cache add name=undefined spec="generator-phaser-mobile" args=["generator-phaser-mobile",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'generator-phaser-mobile',
+6 verbose parsed url   path: 'generator-phaser-mobile',
+6 verbose parsed url   href: 'generator-phaser-mobile' }
+7 silly lockFile f9b90f4b-generator-phaser-mobile generator-phaser-mobile
+8 verbose lock generator-phaser-mobile /Users/jgjung/.npm/f9b90f4b-generator-phaser-mobile.lock
+9 silly lockFile f9b90f4b-generator-phaser-mobile generator-phaser-mobile
+10 silly lockFile f9b90f4b-generator-phaser-mobile generator-phaser-mobile
+11 verbose addNamed [ 'generator-phaser-mobile', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile ec3f58c6-generator-phaser-mobile generator-phaser-mobile@
+14 verbose lock generator-phaser-mobile@ /Users/jgjung/.npm/ec3f58c6-generator-phaser-mobile.lock
+15 silly addNameRange { name: 'generator-phaser-mobile', range: '*', hasData: false }
+16 verbose url raw generator-phaser-mobile
+17 verbose url resolving [ 'https://registry.npmjs.org/', './generator-phaser-mobile' ]
+18 verbose url resolved https://registry.npmjs.org/generator-phaser-mobile
+19 info trying registry request attempt 1 at 17:51:15
+20 http GET https://registry.npmjs.org/generator-phaser-mobile
+21 http 200 https://registry.npmjs.org/generator-phaser-mobile
+22 silly registry.get cb [ 200,
+22 silly registry.get   { date: 'Sun, 23 Feb 2014 23:51:12 GMT',
+22 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B)',
+22 silly registry.get     etag: '"DD4DQQX0J2AWU9DS2OO28ZG4R"',
+22 silly registry.get     'content-type': 'application/json',
+22 silly registry.get     via: '1.1 varnish',
+22 silly registry.get     'cache-control': 'max-age=1',
+22 silly registry.get     'content-length': '9072',
+22 silly registry.get     'accept-ranges': 'bytes',
+22 silly registry.get     age: '0',
+22 silly registry.get     'x-served-by': 'cache-v36-ASH, cache-d98-DAL',
+22 silly registry.get     'x-cache': 'MISS, MISS',
+22 silly registry.get     'x-cache-hits': '0, 0',
+22 silly registry.get     'x-timer': 'S1393199472.837168455,VS0,VS-72,VE-52,VE55',
+22 silly registry.get     vary: 'Accept',
+22 silly registry.get     'keep-alive': 'timeout=10, max=50',
+22 silly registry.get     connection: 'Keep-Alive' } ]
+23 silly addNameRange number 2 { name: 'generator-phaser-mobile', range: '*', hasData: true }
+24 silly addNameRange versions [ 'generator-phaser-mobile', [ '0.0.7', '0.0.8' ] ]
+25 verbose addNamed [ 'generator-phaser-mobile', '0.0.8' ]
+26 verbose addNamed [ '0.0.8', '0.0.8' ]
+27 silly lockFile 89157766-generator-phaser-mobile-0-0-8 generator-phaser-mobile@0.0.8
+28 verbose lock generator-phaser-mobile@0.0.8 /Users/jgjung/.npm/89157766-generator-phaser-mobile-0-0-8.lock
+29 silly lockFile cd322c85-enerator-phaser-mobile-0-0-8-tgz https://registry.npmjs.org/generator-phaser-mobile/-/generator-phaser-mobile-0.0.8.tgz
+30 verbose lock https://registry.npmjs.org/generator-phaser-mobile/-/generator-phaser-mobile-0.0.8.tgz /Users/jgjung/.npm/cd322c85-enerator-phaser-mobile-0-0-8-tgz.lock
+31 verbose addRemoteTarball [ 'https://registry.npmjs.org/generator-phaser-mobile/-/generator-phaser-mobile-0.0.8.tgz',
+31 verbose addRemoteTarball   '25e13788c9a3a132a94651979e28912ba231b821' ]
+32 info retry fetch attempt 1 at 17:51:15
+33 verbose fetch to= /var/folders/q7/qvqd0gxd4mxg1x_cl6zby4nhwyzfxm/T/npm-47196-0Y9UWZas/1393199475836-0.8533446677029133/tmp.tgz
+34 http GET https://registry.npmjs.org/generator-phaser-mobile/-/generator-phaser-mobile-0.0.8.tgz
+35 http 200 https://registry.npmjs.org/generator-phaser-mobile/-/generator-phaser-mobile-0.0.8.tgz
+36 verbose tar unpack /var/folders/q7/qvqd0gxd4mxg1x_cl6zby4nhwyzfxm/T/npm-47196-0Y9UWZas/1393199475836-0.8533446677029133/tmp.tgz
+37 silly lockFile f60f18e3-75836-0-8533446677029133-package tar:///var/folders/q7/qvqd0gxd4mxg1x_cl6zby4nhwyzfxm/T/npm-47196-0Y9UWZas/1393199475836-0.8533446677029133/package
+38 verbose lock tar:///var/folders/q7/qvqd0gxd4mxg1x_cl6zby4nhwyzfxm/T/npm-47196-0Y9UWZas/1393199475836-0.8533446677029133/package /Users/jgjung/.npm/f60f18e3-75836-0-8533446677029133-package.lock
+39 silly lockFile afb99a35-75836-0-8533446677029133-tmp-tgz tar:///var/folders/q7/qvqd0gxd4mxg1x_cl6zby4nhwyzfxm/T/npm-47196-0Y9UWZas/1393199475836-0.8533446677029133/tmp.tgz
+40 verbose lock tar:///var/folders/q7/qvqd0gxd4mxg1x_cl6zby4nhwyzfxm/T/npm-47196-0Y9UWZas/1393199475836-0.8533446677029133/tmp.tgz /Users/jgjung/.npm/afb99a35-75836-0-8533446677029133-tmp-tgz.lock
+41 silly gunzTarPerm modes [ '755', '644' ]
+42 silly gunzTarPerm extractEntry package.json
+43 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+44 silly gunzTarPerm extractEntry .npmignore
+45 silly gunzTarPerm modified mode [ '.npmignore', 438, 420 ]
+46 silly gunzTarPerm extractEntry README.md
+47 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+48 silly gunzTarPerm extractEntry LICENSE
+49 silly gunzTarPerm modified mode [ 'LICENSE', 438, 420 ]
+50 silly gunzTarPerm extractEntry .gitattributes
+51 silly gunzTarPerm modified mode [ '.gitattributes', 438, 420 ]
+52 silly gunzTarPerm extractEntry app/index.js
+53 silly gunzTarPerm modified mode [ 'app/index.js', 438, 420 ]
+54 silly gunzTarPerm extractEntry app/templates/gitignore
+55 silly gunzTarPerm modified mode [ 'app/templates/gitignore', 438, 420 ]
+56 silly gunzTarPerm extractEntry app/templates/jshintrc
+57 silly gunzTarPerm modified mode [ 'app/templates/jshintrc', 438, 420 ]
+58 silly gunzTarPerm extractEntry app/templates/src/apple-touch-icon.png
+59 silly gunzTarPerm modified mode [ 'app/templates/src/apple-touch-icon.png', 438, 420 ]
+60 silly gunzTarPerm extractEntry app/templates/src/assets/audio/main_menu.mp3
+61 silly gunzTarPerm modified mode [ 'app/templates/src/assets/audio/main_menu.mp3', 438, 420 ]
+62 silly gunzTarPerm extractEntry app/templates/src/assets/icons/app_icon_256x256.png
+63 silly gunzTarPerm modified mode [ 'app/templates/src/assets/icons/app_icon_256x256.png',
+63 silly gunzTarPerm   438,
+63 silly gunzTarPerm   420 ]
+64 silly gunzTarPerm extractEntry app/templates/src/assets/icons/app_icon_1024x1024.png
+65 silly gunzTarPerm modified mode [ 'app/templates/src/assets/icons/app_icon_1024x1024.png',
+65 silly gunzTarPerm   438,
+65 silly gunzTarPerm   420 ]
+66 silly gunzTarPerm extractEntry app/templates/src/assets/icons/app_icon_120x120.png
+67 silly gunzTarPerm modified mode [ 'app/templates/src/assets/icons/app_icon_120x120.png',
+67 silly gunzTarPerm   438,
+67 silly gunzTarPerm   420 ]
+68 silly gunzTarPerm extractEntry app/templates/src/assets/icons/app_icon_144x144.png
+69 silly gunzTarPerm modified mode [ 'app/templates/src/assets/icons/app_icon_144x144.png',
+69 silly gunzTarPerm   438,
+69 silly gunzTarPerm   420 ]
+70 silly gunzTarPerm extractEntry app/templates/src/assets/icons/app_icon_152x152.png
+71 silly gunzTarPerm modified mode [ 'app/templates/src/assets/icons/app_icon_152x152.png',
+71 silly gunzTarPerm   438,
+71 silly gunzTarPerm   420 ]
+72 silly gunzTarPerm extractEntry app/templates/src/assets/icons/app_icon_114x114.png
+73 silly gunzTarPerm modified mode [ 'app/templates/src/assets/icons/app_icon_114x114.png',
+73 silly gunzTarPerm   438,
+73 silly gunzTarPerm   420 ]
+74 silly gunzTarPerm extractEntry app/templates/src/assets/icons/app_icon_512x512.png
+75 silly gunzTarPerm modified mode [ 'app/templates/src/assets/icons/app_icon_512x512.png',
+75 silly gunzTarPerm   438,
+75 silly gunzTarPerm   420 ]
+76 silly gunzTarPerm extractEntry app/templates/src/assets/icons/app_icon_57x57.png
+77 silly gunzTarPerm modified mode [ 'app/templates/src/assets/icons/app_icon_57x57.png', 438, 420 ]
+78 silly gunzTarPerm extractEntry app/templates/src/assets/icons/app_icon_60x60.png
+79 silly gunzTarPerm modified mode [ 'app/templates/src/assets/icons/app_icon_60x60.png', 438, 420 ]
+80 silly gunzTarPerm extractEntry app/templates/src/assets/icons/app_icon_72x72.png
+81 silly gunzTarPerm modified mode [ 'app/templates/src/assets/icons/app_icon_72x72.png', 438, 420 ]
+82 silly gunzTarPerm extractEntry app/templates/src/assets/icons/app_icon_76x76.png
+83 silly gunzTarPerm modified mode [ 'app/templates/src/assets/icons/app_icon_76x76.png', 438, 420 ]
+84 silly gunzTarPerm extractEntry app/templates/src/assets/images/background.png
+85 silly gunzTarPerm modified mode [ 'app/templates/src/assets/images/background.png', 438, 420 ]
+86 silly gunzTarPerm extractEntry app/templates/src/assets/images/orientation.jpg
+87 silly gunzTarPerm modified mode [ 'app/templates/src/assets/images/orientation.jpg', 438, 420 ]
+88 silly gunzTarPerm extractEntry app/templates/src/assets/images/play_button.png
+89 silly gunzTarPerm modified mode [ 'app/templates/src/assets/images/play_button.png', 438, 420 ]
+90 silly gunzTarPerm extractEntry app/templates/src/assets/images/progress_bar.png
+91 silly gunzTarPerm modified mode [ 'app/templates/src/assets/images/progress_bar.png', 438, 420 ]
+92 silly gunzTarPerm extractEntry app/templates/src/assets/images/progress_bar_background.png
+93 silly gunzTarPerm modified mode [ 'app/templates/src/assets/images/progress_bar_background.png',
+93 silly gunzTarPerm   438,
+93 silly gunzTarPerm   420 ]
+94 silly gunzTarPerm extractEntry app/templates/src/css/main.css
+95 silly gunzTarPerm modified mode [ 'app/templates/src/css/main.css', 438, 420 ]
+96 silly gunzTarPerm extractEntry app/templates/src/index.html
+97 silly gunzTarPerm modified mode [ 'app/templates/src/index.html', 438, 420 ]
+98 silly gunzTarPerm extractEntry app/templates/src/js/_main.js
+99 silly gunzTarPerm modified mode [ 'app/templates/src/js/_main.js', 438, 420 ]
+100 silly gunzTarPerm extractEntry app/templates/src/js/lib/phaser.js
+101 silly gunzTarPerm modified mode [ 'app/templates/src/js/lib/phaser.js', 438, 420 ]
+102 silly gunzTarPerm extractEntry app/templates/src/js/lib/phaser.d.ts
+103 silly gunzTarPerm modified mode [ 'app/templates/src/js/lib/phaser.d.ts', 438, 420 ]
+104 silly gunzTarPerm extractEntry app/templates/src/js/main.ts
+105 silly gunzTarPerm modified mode [ 'app/templates/src/js/main.ts', 438, 420 ]
+106 silly gunzTarPerm extractEntry app/templates/src/js/states/Game.js
+107 silly gunzTarPerm modified mode [ 'app/templates/src/js/states/Game.js', 438, 420 ]
+108 silly gunzTarPerm extractEntry app/templates/src/js/states/MainMenu.js
+109 silly gunzTarPerm modified mode [ 'app/templates/src/js/states/MainMenu.js', 438, 420 ]
+110 silly gunzTarPerm extractEntry app/templates/src/js/states/Preloader.js
+111 silly gunzTarPerm modified mode [ 'app/templates/src/js/states/Preloader.js', 438, 420 ]
+112 silly gunzTarPerm extractEntry app/templates/src/js/states/_Boot.js
+113 silly gunzTarPerm modified mode [ 'app/templates/src/js/states/_Boot.js', 438, 420 ]
+114 silly gunzTarPerm extractEntry app/templates/_Gruntfile-js.coffee
+115 silly gunzTarPerm modified mode [ 'app/templates/_Gruntfile-js.coffee', 438, 420 ]
+116 silly gunzTarPerm extractEntry app/templates/_Gruntfile-ts.coffee
+117 silly gunzTarPerm modified mode [ 'app/templates/_Gruntfile-ts.coffee', 438, 420 ]
+118 silly gunzTarPerm extractEntry app/templates/_package-js.json
+119 silly gunzTarPerm modified mode [ 'app/templates/_package-js.json', 438, 420 ]
+120 silly gunzTarPerm extractEntry app/templates/_package-ts.json
+121 silly gunzTarPerm modified mode [ 'app/templates/_package-ts.json', 438, 420 ]
+122 silly gunzTarPerm extractEntry AUTHORS
+123 silly gunzTarPerm modified mode [ 'AUTHORS', 438, 420 ]
+124 silly lockFile f60f18e3-75836-0-8533446677029133-package tar:///var/folders/q7/qvqd0gxd4mxg1x_cl6zby4nhwyzfxm/T/npm-47196-0Y9UWZas/1393199475836-0.8533446677029133/package
+125 silly lockFile f60f18e3-75836-0-8533446677029133-package tar:///var/folders/q7/qvqd0gxd4mxg1x_cl6zby4nhwyzfxm/T/npm-47196-0Y9UWZas/1393199475836-0.8533446677029133/package
+126 silly lockFile afb99a35-75836-0-8533446677029133-tmp-tgz tar:///var/folders/q7/qvqd0gxd4mxg1x_cl6zby4nhwyzfxm/T/npm-47196-0Y9UWZas/1393199475836-0.8533446677029133/tmp.tgz
+127 silly lockFile afb99a35-75836-0-8533446677029133-tmp-tgz tar:///var/folders/q7/qvqd0gxd4mxg1x_cl6zby4nhwyzfxm/T/npm-47196-0Y9UWZas/1393199475836-0.8533446677029133/tmp.tgz
+128 verbose tar pack [ '/Users/jgjung/.npm/generator-phaser-mobile/0.0.8/package.tgz',
+128 verbose tar pack   '/var/folders/q7/qvqd0gxd4mxg1x_cl6zby4nhwyzfxm/T/npm-47196-0Y9UWZas/1393199475836-0.8533446677029133/package' ]
+129 verbose tarball /Users/jgjung/.npm/generator-phaser-mobile/0.0.8/package.tgz
+130 verbose folder /var/folders/q7/qvqd0gxd4mxg1x_cl6zby4nhwyzfxm/T/npm-47196-0Y9UWZas/1393199475836-0.8533446677029133/package
+131 silly lockFile f60f18e3-75836-0-8533446677029133-package tar:///var/folders/q7/qvqd0gxd4mxg1x_cl6zby4nhwyzfxm/T/npm-47196-0Y9UWZas/1393199475836-0.8533446677029133/package
+132 verbose lock tar:///var/folders/q7/qvqd0gxd4mxg1x_cl6zby4nhwyzfxm/T/npm-47196-0Y9UWZas/1393199475836-0.8533446677029133/package /Users/jgjung/.npm/f60f18e3-75836-0-8533446677029133-package.lock
+133 silly lockFile db4f8a12--phaser-mobile-0-0-8-package-tgz tar:///Users/jgjung/.npm/generator-phaser-mobile/0.0.8/package.tgz
+134 verbose lock tar:///Users/jgjung/.npm/generator-phaser-mobile/0.0.8/package.tgz /Users/jgjung/.npm/db4f8a12--phaser-mobile-0-0-8-package-tgz.lock
+135 silly lockFile f60f18e3-75836-0-8533446677029133-package tar:///var/folders/q7/qvqd0gxd4mxg1x_cl6zby4nhwyzfxm/T/npm-47196-0Y9UWZas/1393199475836-0.8533446677029133/package
+136 silly lockFile f60f18e3-75836-0-8533446677029133-package tar:///var/folders/q7/qvqd0gxd4mxg1x_cl6zby4nhwyzfxm/T/npm-47196-0Y9UWZas/1393199475836-0.8533446677029133/package
+137 silly lockFile db4f8a12--phaser-mobile-0-0-8-package-tgz tar:///Users/jgjung/.npm/generator-phaser-mobile/0.0.8/package.tgz
+138 silly lockFile db4f8a12--phaser-mobile-0-0-8-package-tgz tar:///Users/jgjung/.npm/generator-phaser-mobile/0.0.8/package.tgz
+139 silly lockFile e73f6d86-ator-phaser-mobile-0-0-8-package /Users/jgjung/.npm/generator-phaser-mobile/0.0.8/package
+140 verbose lock /Users/jgjung/.npm/generator-phaser-mobile/0.0.8/package /Users/jgjung/.npm/e73f6d86-ator-phaser-mobile-0-0-8-package.lock
+141 silly lockFile e73f6d86-ator-phaser-mobile-0-0-8-package /Users/jgjung/.npm/generator-phaser-mobile/0.0.8/package
+142 silly lockFile e73f6d86-ator-phaser-mobile-0-0-8-package /Users/jgjung/.npm/generator-phaser-mobile/0.0.8/package
+143 verbose tar unpack /Users/jgjung/.npm/generator-phaser-mobile/0.0.8/package.tgz
+144 silly lockFile f033beed-ator-phaser-mobile-0-0-8-package tar:///Users/jgjung/.npm/generator-phaser-mobile/0.0.8/package
+145 verbose lock tar:///Users/jgjung/.npm/generator-phaser-mobile/0.0.8/package /Users/jgjung/.npm/f033beed-ator-phaser-mobile-0-0-8-package.lock
+146 silly lockFile db4f8a12--phaser-mobile-0-0-8-package-tgz tar:///Users/jgjung/.npm/generator-phaser-mobile/0.0.8/package.tgz
+147 verbose lock tar:///Users/jgjung/.npm/generator-phaser-mobile/0.0.8/package.tgz /Users/jgjung/.npm/db4f8a12--phaser-mobile-0-0-8-package-tgz.lock
+148 silly gunzTarPerm modes [ '755', '644' ]
+149 silly gunzTarPerm extractEntry package.json
+150 silly gunzTarPerm extractEntry .npmignore
+151 silly gunzTarPerm extractEntry README.md
+152 silly gunzTarPerm extractEntry LICENSE
+153 silly gunzTarPerm extractEntry .gitattributes
+154 silly gunzTarPerm extractEntry AUTHORS
+155 silly gunzTarPerm extractEntry app/index.js
+156 silly gunzTarPerm extractEntry app/templates/_Gruntfile-js.coffee
+157 silly gunzTarPerm extractEntry app/templates/_Gruntfile-ts.coffee
+158 silly gunzTarPerm extractEntry app/templates/_package-js.json
+159 silly gunzTarPerm extractEntry app/templates/_package-ts.json
+160 silly gunzTarPerm extractEntry app/templates/gitignore
+161 silly gunzTarPerm extractEntry app/templates/jshintrc
+162 silly gunzTarPerm extractEntry app/templates/src/apple-touch-icon.png
+163 silly gunzTarPerm extractEntry app/templates/src/assets/audio/main_menu.mp3
+164 silly gunzTarPerm extractEntry app/templates/src/assets/icons/app_icon_256x256.png
+165 silly gunzTarPerm extractEntry app/templates/src/assets/icons/app_icon_1024x1024.png
+166 silly gunzTarPerm extractEntry app/templates/src/assets/icons/app_icon_120x120.png
+167 silly gunzTarPerm extractEntry app/templates/src/assets/icons/app_icon_144x144.png
+168 silly gunzTarPerm extractEntry app/templates/src/assets/icons/app_icon_152x152.png
+169 silly gunzTarPerm extractEntry app/templates/src/assets/icons/app_icon_114x114.png
+170 silly gunzTarPerm extractEntry app/templates/src/assets/icons/app_icon_512x512.png
+171 silly gunzTarPerm extractEntry app/templates/src/assets/icons/app_icon_57x57.png
+172 silly gunzTarPerm extractEntry app/templates/src/assets/icons/app_icon_60x60.png
+173 silly gunzTarPerm extractEntry app/templates/src/assets/icons/app_icon_72x72.png
+174 silly gunzTarPerm extractEntry app/templates/src/assets/icons/app_icon_76x76.png
+175 silly gunzTarPerm extractEntry app/templates/src/assets/images/background.png
+176 silly gunzTarPerm extractEntry app/templates/src/assets/images/orientation.jpg
+177 silly gunzTarPerm extractEntry app/templates/src/assets/images/play_button.png
+178 silly gunzTarPerm extractEntry app/templates/src/assets/images/progress_bar.png
+179 silly gunzTarPerm extractEntry app/templates/src/assets/images/progress_bar_background.png
+180 silly gunzTarPerm extractEntry app/templates/src/css/main.css
+181 silly gunzTarPerm extractEntry app/templates/src/index.html
+182 silly gunzTarPerm extractEntry app/templates/src/js/_main.js
+183 silly gunzTarPerm extractEntry app/templates/src/js/lib/phaser.js
+184 silly gunzTarPerm extractEntry app/templates/src/js/lib/phaser.d.ts
+185 silly gunzTarPerm extractEntry app/templates/src/js/main.ts
+186 silly gunzTarPerm extractEntry app/templates/src/js/states/Game.js
+187 silly gunzTarPerm extractEntry app/templates/src/js/states/MainMenu.js
+188 silly gunzTarPerm extractEntry app/templates/src/js/states/Preloader.js
+189 silly gunzTarPerm extractEntry app/templates/src/js/states/_Boot.js
+190 silly lockFile f033beed-ator-phaser-mobile-0-0-8-package tar:///Users/jgjung/.npm/generator-phaser-mobile/0.0.8/package
+191 silly lockFile f033beed-ator-phaser-mobile-0-0-8-package tar:///Users/jgjung/.npm/generator-phaser-mobile/0.0.8/package
+192 silly lockFile db4f8a12--phaser-mobile-0-0-8-package-tgz tar:///Users/jgjung/.npm/generator-phaser-mobile/0.0.8/package.tgz
+193 silly lockFile db4f8a12--phaser-mobile-0-0-8-package-tgz tar:///Users/jgjung/.npm/generator-phaser-mobile/0.0.8/package.tgz
+194 verbose chmod /Users/jgjung/.npm/generator-phaser-mobile/0.0.8/package.tgz 644
+195 verbose chown /Users/jgjung/.npm/generator-phaser-mobile/0.0.8/package.tgz [ 972012468, 1327142227 ]
+196 silly lockFile cd322c85-enerator-phaser-mobile-0-0-8-tgz https://registry.npmjs.org/generator-phaser-mobile/-/generator-phaser-mobile-0.0.8.tgz
+197 silly lockFile cd322c85-enerator-phaser-mobile-0-0-8-tgz https://registry.npmjs.org/generator-phaser-mobile/-/generator-phaser-mobile-0.0.8.tgz
+198 silly lockFile 89157766-generator-phaser-mobile-0-0-8 generator-phaser-mobile@0.0.8
+199 silly lockFile 89157766-generator-phaser-mobile-0-0-8 generator-phaser-mobile@0.0.8
+200 silly lockFile ec3f58c6-generator-phaser-mobile generator-phaser-mobile@
+201 silly lockFile ec3f58c6-generator-phaser-mobile generator-phaser-mobile@
+202 silly resolved [ { name: 'generator-phaser-mobile',
+202 silly resolved     version: '0.0.8',
+202 silly resolved     description: 'A Yeoman generator to generate HTML5 games with phaser.js that are fully compatible with mobile full screen mode',
+202 silly resolved     keywords: [ 'yeoman-generator', 'phaser', 'mobile', 'typescript' ],
+202 silly resolved     homepage: 'https://github.com/udisun/generator-phaser-mobile',
+202 silly resolved     bugs: { url: 'https://github.com/udisun/generator-phaser-mobile/issues' },
+202 silly resolved     author:
+202 silly resolved      { name: 'Ehud Shahak',
+202 silly resolved        email: 'udisun@gmail.com',
+202 silly resolved        url: 'https://github.com/udisun' },
+202 silly resolved     contributors: [],
+202 silly resolved     main: 'app/index.js',
+202 silly resolved     repository:
+202 silly resolved      { type: 'git',
+202 silly resolved        url: 'git://github.com/udisun/generator-phaser-mobile.git' },
+202 silly resolved     scripts: { test: 'mocha' },
+202 silly resolved     dependencies: { 'yeoman-generator': '~0.13.0' },
+202 silly resolved     devDependencies: { mocha: '~1.12.0' },
+202 silly resolved     peerDependencies: { yo: '>=1.0.0' },
+202 silly resolved     engines: { node: '>=0.8.0', npm: '>=1.2.10' },
+202 silly resolved     licenses: [ [Object] ],
+202 silly resolved     readme: 'generator-phaser-mobile\r\n=======================\r\n\r\nA [Yeoman](http://yeoman.io/) generator to generate HTML5 games with [phaser] that are fully compatible with mobile full screen mode(http://phaser.io/).\r\n\r\n**INSTRUCTIONS**\r\n\r\n+ Install [Node.js](http://www.nodejs.org)\r\n\r\n+ Install the required npm modules by issuing these commands:\r\n\r\n  `npm install -g yo generator-phaser-mobile`\r\n\r\n+ Create a new directory for your game:\r\n  + Unix/OSX : `mkdir ~/Desktop/mygame && cd $_`\r\n  + Windows  : `mkdir %USERPROFILE%\\Desktop\\mygame && cd %USERPROFILE%\\Desktop\\mygame`\r\n\r\n+ Invoke the generator:\r\n\r\n  `yo phaser-mobile`\r\n\r\n+ Run a local development server (livereload enabled) with this command:\r\n\r\n  `grunt`\r\n\r\n+ Package your game (i.e. minify css, html and js) with:\r\n\r\n  `grunt dist`\r\n\r\n**TODO**\r\n\r\n+ Add Grunt tasks for "mobile" deployment \r\n  + See Denis\' shell & debug tasks in Gruntfile.coffee for Tizen devices in previous releases/commits.\r\n  + Add Grunt task for [CocoonJS](https://www.ludei.com/cocoonjs/).\r\n  + Add Grunt task for [Ejecta](https://github.com/phoboslab/Ejecta) (will it blend)?\r\n  \r\n+ Think about a task to update Phaser \r\n  + bower or git submodule?  (Phaser repo is quite big)\r\n  + grunt-curl? (grab raw phaser.js file from github ...)\r\n\r\n\r\n**CREDITS**\r\n\r\n+ [@photonstorm](https://github.com/photonstorm/) for creating \r\n  [phaser](https://github.com/photonstorm/phaser).\r\n\r\n+ The guys behind [yeoman](https://github.com/yeoman/yeoman).\r\n\r\n+ [Ben Alman](http://benalman.com/) for [Grunt](http://gruntjs.com/)\r\n\r\n',
+202 silly resolved     readmeFilename: 'README.md',
+202 silly resolved     _id: 'generator-phaser-mobile@0.0.8',
+202 silly resolved     dist: { shasum: '378f2b97d41f999a98f344bb757a563c9bfd96e5' },
+202 silly resolved     _from: 'generator-phaser-mobile@',
+202 silly resolved     _resolved: 'https://registry.npmjs.org/generator-phaser-mobile/-/generator-phaser-mobile-0.0.8.tgz' } ]
+203 info install generator-phaser-mobile@0.0.8 into /usr/local/lib
+204 info installOne generator-phaser-mobile@0.0.8
+205 info /usr/local/lib/node_modules/generator-phaser-mobile unbuild
+206 verbose tar unpack /Users/jgjung/.npm/generator-phaser-mobile/0.0.8/package.tgz
+207 silly lockFile 9aae5b64--modules-generator-phaser-mobile tar:///usr/local/lib/node_modules/generator-phaser-mobile
+208 verbose lock tar:///usr/local/lib/node_modules/generator-phaser-mobile /Users/jgjung/.npm/9aae5b64--modules-generator-phaser-mobile.lock
+209 silly lockFile db4f8a12--phaser-mobile-0-0-8-package-tgz tar:///Users/jgjung/.npm/generator-phaser-mobile/0.0.8/package.tgz
+210 verbose lock tar:///Users/jgjung/.npm/generator-phaser-mobile/0.0.8/package.tgz /Users/jgjung/.npm/db4f8a12--phaser-mobile-0-0-8-package-tgz.lock
+211 silly gunzTarPerm modes [ '755', '644' ]
+212 error Error: EACCES, mkdir '/usr/local/lib/node_modules/generator-phaser-mobile'
+212 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/generator-phaser-mobile']
+212 error   errno: 3,
+212 error   code: 'EACCES',
+212 error   path: '/usr/local/lib/node_modules/generator-phaser-mobile',
+212 error   fstream_type: 'Directory',
+212 error   fstream_path: '/usr/local/lib/node_modules/generator-phaser-mobile',
+212 error   fstream_class: 'DirWriter',
+212 error   fstream_stack:
+212 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+212 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:37:53',
+212 error      'Object.oncomplete (fs.js:107:15)' ] }
+213 error Please try running this command again as root/Administrator.
+214 error System Darwin 12.4.0
+215 error command "node" "/usr/local/bin/npm" "install" "generator-phaser-mobile" "-g"
+216 error cwd /Users/jgjung/Documents/Development/projects/jDrawer
+217 error node -v v0.10.15
+218 error npm -v 1.3.5
+219 error path /usr/local/lib/node_modules/generator-phaser-mobile
+220 error fstream_path /usr/local/lib/node_modules/generator-phaser-mobile
+221 error fstream_type Directory
+222 error fstream_class DirWriter
+223 error code EACCES
+224 error errno 3
+225 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules/generator-phaser-mobile'
+226 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+226 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:37:53
+226 error fstream_stack Object.oncomplete (fs.js:107:15)
+227 verbose exit [ 3, true ]

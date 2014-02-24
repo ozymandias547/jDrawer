@@ -48,10 +48,12 @@
             //Set CSS3 animations or callbacks based upon settings or system abilites 
             if (!this.supportsTransitions()) {
                 this.css3Animations = this.options.css3Animations = false;
-            } else if (this.supportsTransitions() && this.css3Animations) {
+                this.initFallBackAnimations();
+            } else if (this.supportsTransitions() && this.css3Animations && this.fixedHeight) {
                 this.initCSS3Animations();
             } else {
                 this.css3Animations = this.options.css3Animations = false;
+                this.initFallBackAnimations();
             }
 
         },
@@ -68,12 +70,9 @@
 
             } else {
                 if (!this.isMobile()) {
-                    this.$el.css("bottom", negate(this.fixedHeight))
-                    this.$contentContainer.css("height", this.fixedHeight + "px")
-                   
+                   //TODO: auto height CSS3 animations
                 } else {
-                    this.$el.css("bottom", negate(this.getMobileHeight()))
-                    this.$contentContainer.css("height", this.getMobileHeight() + "px");
+                   //TODO: auto height CSS3 animations
                 }
             }
             this.$drawerContainer.css({
@@ -82,6 +81,10 @@
                 "-o-transform": "translate3d(0, 0, 0)",
                 "transform": "translate3d(0, 0, 0)"
             })
+        },
+
+        initFallBackAnimations: function() {
+            this.$el.css("bottom", "0px");
         },
 
         initTabLinks: function() {
@@ -156,10 +159,24 @@
 
         },
 
-        open: function() {
-            $("html").addClass("jDrawer-open");
+        setToggledClass : function() {
+            var that = this;
 
-           
+            this.$tabLinks.each(function() {
+                
+                var $this = $(this);
+                if ($this.data("toggle" == "")) {
+                    if (that.isOpen())
+                        $this.removeClass("toggled")
+                    else $this.addClass("toggled")
+                }
+            })
+        },
+
+        open: function() {
+            
+            this.setToggledClass();
+            
 
             if (this.isMobile()) {
 
@@ -191,12 +208,26 @@
                             "height": this.fixedHeight + "px"
                         }, this.drawerOpenSpeed)
                     } else {
+                        if (!this.isOpen()) {
+                            this.$contentContainer.css({ "height" : "auto" });
+                            var autoHeight = this.$contentContainer.height()
 
-                        this.$contentContainer.css({
-                            "height": "auto",
-                            "display": "none"
-                        })
-                        this.$contentContainer.slideDown(this.drawerOpenSpeed);
+                            if (autoHeight > this.getMobileHeight()) autoHeight = this.getMobileHeight();
+
+                            this.$contentContainer.css({ "height" : "0px" });
+                            this.$contentContainer.animate({ "height" : autoHeight + "px" });
+                        } else {
+                            var previousHeight = this.$contentContainer.height();
+                            
+                            this.$contentContainer.css({ "height" : "auto" });
+                            var autoHeight = this.$contentContainer.height()
+
+                            if (autoHeight > this.getMobileHeight()) autoHeight = this.getMobileHeight();
+
+                            this.$contentContainer.css({ "height" : previousHeight + "px" });
+                            this.$contentContainer.animate({ "height" : autoHeight + "px" });
+                        }
+                        
                     }
                 } else {
                     this.$drawerContainer.addClass("CSS3")
@@ -214,18 +245,20 @@
                             "transform": "translate3d(0, " + negate(this.fixedHeight) + "px, 0)"
                         })
                     } else {
-                        // this.$contentContainer.css("max-height");
+                        // TODO: CSS3 animation for auto height functionality
                     }
                 }
             }
-
+            $("html").addClass("jDrawer-open");
         },
 
         close: function(e) {
 
             if (typeof e !== "undefined" && this.isInDrawer(e.target)) return;
 
-            $("html").removeClass("jDrawer-open");
+            this.setToggledClass();
+
+            
             this.$tabLinks.each(function() {
                 $(this).removeClass("active")
             })
@@ -266,6 +299,7 @@
                 }
             }
 
+            $("html").removeClass("jDrawer-open");
 
         },
 
@@ -287,7 +321,7 @@
                 return;
             }
 
-            if ($clickedTab.data("toggle") == "" || $clickedTab.data("toggle-on") == "" || $clickedTab.data("toggle-off") == "") {
+            if ($clickedTab.data("toggle") == "") {
                 this.toggle(e);
                 return;
             }
@@ -301,10 +335,10 @@
             if (!isOpen) {
                 
                 if ($clickedTab) {
-                    this.open();
                     this.hideTabs();
                     this.openTab($clickedTab.data("open"));
                     this.activateTabLink($clickedTab);
+                    this.open();
                 }
 
             } else if (isOpen && $clickedTab.hasClass("active") && typeof this.labelClose !== "undefined" && this.labelClose) {
@@ -317,7 +351,7 @@
                 this.hideTabs();
                 this.openTab($clickedTab.data("open"));
                 this.activateTabLink($clickedTab);
-
+                this.open();
             }
 
         },
@@ -339,7 +373,9 @@
         openTab: function(id) {
 
             this.$tabs.each(function() {
+
                 if ($(this).attr("id") == id) $(this).addClass("active")
+            
             })
 
         },
@@ -410,9 +446,15 @@
                                 "height": this.fixedHeight + "px"
                             })
                         } else {
-                            this.$contentContainer.css({
-                                "height": "auto"
-                            });
+                            var previousHeight = this.$contentContainer.height();
+                            
+                            this.$contentContainer.css({ "height" : "auto" });
+                            var autoHeight = this.$contentContainer.height()
+
+                            if (autoHeight > this.getMobileHeight()) autoHeight = this.getMobileHeight();
+
+                            this.$contentContainer.css({ "height" : previousHeight + "px" });
+                            this.$contentContainer.animate({ "height" : autoHeight + "px" });
                         }
                         // this.handleDesktopTabs();
                     }
@@ -524,8 +566,7 @@
                     this.hideTabs();
                     this.openTab($defaultTab.data("open"))
                     $defaultTab.addClass("active")
-                    this.open()
-
+                    this.open();   
                 }
             }
         },

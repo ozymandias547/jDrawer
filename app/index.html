@@ -33,13 +33,15 @@
 
         <div class="jumbotron">
             <h1>Drawer Plugin Demo</h1>
-            <p>Author: <a href="http://josephjung.co.nf">Joseph Jung</a></p>
-            <p>Github: <a href="http://github.com/ozymandias547/jDrawer">jDrawer repo</a></p>
+            <p>Author: <a href="http://josephjung.co.nf">Joseph Jung</a>
+            </p>
+            <p>Github: <a href="http://github.com/ozymandias547/jDrawer">jDrawer repo</a>
+            </p>
         </div>
 
         <div class="row marketing">
             <h3>Other examples</h3>
-                <li><a href="example1.html">Implementation Example 1</a>
+            <li><a href="example1.html">Implementation Example 1</a>
             </li>
             <!-- <li><a href="example2.html">Implementation Example 2</a>
             </li> -->
@@ -76,7 +78,7 @@
             <h3>Upcoming Features (listed by priority)</h3>
             <ul>
                 <li>Auto Height (currently only does fixed height drawers)</li>
-                <li>(Possible)<a href="http://www.greensock.com/">Greensock</a> animation plugin for better mobile scrolling performance </li>
+                <li>(Possible)<a href="http://www.greensock.com/">Greensock</a> animation plugin for better mobile scrolling performance</li>
                 <li>(Possible) Manual resizing of fixed height drawers plugin with drag and drop</li>
                 <li>(Possible) tab transition plugins</li>
             </ul>
@@ -95,7 +97,7 @@
 
     </div>
     <div class="j-drawer">
-        <div class="j-drawer-container">                
+        <div class="j-drawer-container">
             <!-- Start of tabLinks -->
             <div class="j-bar">
                 <button class="j-tablink" data-open="tab1" data-disabled>disabled</button>
@@ -106,13 +108,14 @@
                 <button class="j-tablink" data-open="tab6">Length</button>
                 <button class="j-tablink" data-lazy-load data-href="../count" data-open="tab7">lazyloaded AJAX</button>
                 <button class="j-tablink" data-href="../template" data-open="tab8">AJAX</button>
-                <button class="j-tablink" href="" data-toggle>toggle</button>
-                <button class="j-tablink" href="" data-toggle-on data-desktop>+</button>
-                <button class="j-tablink" href="" data-toggle-off>-</button>
+                <button class="j-tablink" href="" data-toggle>
+                    <span class="openedToggle">-</span>
+                    <span class="closedToggle">+</span>
+                </button>
             </div>
             <!-- End of tabLinks -->
 
-            
+
             <!-- Start of tabs -->
             <div class="j-content">
                 <div class="j-tab" id="tab1">This content shouldn't be visible! stop hacking stuff</div>
@@ -149,7 +152,7 @@
                 <div class="j-tab" id="tab8">Turn on the accompanying node server to see AJAX loaded into the drawer.</div>
             </div>
             <!-- end of tabs -->
-        
+
 
         </div>
     </div>
@@ -177,22 +180,22 @@
 
     <!-- build:js({app,.tmp}) scripts/main.js -->
     <script type="text/javascript" src="scripts/jDrawer.js"></script>
-    
+
     <!-- endbuild -->
     <script>
-        $(document).ready(function() {
-
-            var myDrawer = new jDrawer({
-                fixedHeight : 300,          //Make the drawer a fixed height. If not set, height will be set to "auto"
-                mobileBreakpoint : 768,     //The breaktpoint when the drawer will go full screen.
-                labelClose : true,         //If true, clicking on active tabLabels will close the drawer
-                css3Animations : true,      //If false, will force jQuery animation.  Otherwise, CSS3 animations will be attempted with a jQuery fallback.
-                drawerOpenSpeed: 500,       //jQuery animation speed (control CSS speed in CSS file)
-                drawerCloseSpeed: 500       //jQuery animation speed (control CSS speed in CSS file)
-            });
-        })
+    $(document).ready(function() {
+        var myDrawer = new jDrawer({
+            // fixedHeight : 300,          //Make the drawer a fixed height. If not set, height will be set to "auto"
+            maxHeight: 300,
+            mobileBreakpoint: 768, //The breaktpoint when the drawer will go full screen.
+            labelClose: true, //If true, clicking on active tabLabels will close the drawer
+            css3Animations: true, //If false, will force jQuery animation.  Otherwise, CSS3 animations will be attempted with a jQuery fallback.
+            drawerOpenSpeed: 500, //jQuery animation speed (control CSS speed in CSS file)
+            drawerCloseSpeed: 500 //jQuery animation speed (control CSS speed in CSS file)
+        });
+    })
     </script>
-     
+
 </body>
 
 </html>
