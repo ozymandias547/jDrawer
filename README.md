@@ -12,6 +12,7 @@
  - enter 'bower install'
  - enter 'npm install'
  - run the demo index.html
+ - (optional) test AJAX tabs by running 'node server' to serve some basic templates. (node is required)
 
 ## Features
             
@@ -39,10 +40,11 @@
 - (Possible) tab transition animations
 
 ## Tested on:
-- Chrome - done
-- Firefox - done
-- iOS - done
-- TO DO: IE8
+- Chrome
+- Firefox
+- iOS (iPad and iPhone ready)
+- IE8
+- TO DO: IE9-11
 - TO DO: Android
            
 
