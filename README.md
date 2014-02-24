@@ -1,4 +1,4 @@
-# jDrawer plugin v0.2 (WIP)&nbsp;
+# jDrawer plugin v0.2 &nbsp;
 
 #### A reusable, decoupled, and configurable Drawer plugin
 ---
