@@ -13,38 +13,38 @@
  - enter 'npm install'
  - run the demo index.html
 
-### In order to use jDrawer yourself, you'll only need the jDrawer.js & jDrawer.css file. 
-
-
 ## Features
             
-	- Mobile ready
-	- Easily customizable look & feel - CSS easy to override
-	- Small size - 6k (2k gZipped)
-	- Only 1 dependency - jQuery
-	- Hardware accelerated animations with CSS3 animations w/ jQuery fallback (configurable)
-	- Fully customizable tabLink types via data-attributes (tab links)
-	- Fully configurable drawer behavior (configurations) 
-	- FOUC Free (no flashes of unstyled content - good for slower browsers)
-	- Lazy loading option with ajax support
-    	- Fully accessible by keyboard
-    	- Auto Height and fixed height mode
-            
+- Mobile ready
+- Easily customizable look & feel - CSS easy to override
+- Small size - 6k (2k gZipped)
+- Only 1 dependency - jQuery
+- Hardware accelerated animations with CSS3 animations w/ jQuery fallback (configurable)
+- Fully customizable tabLink types via data-attributes (tab links)
+- Fully configurable drawer behavior (configurations) 
+- FOUC Free (no flashes of unstyled content - good for slower browsers)
+- Lazy loading option with ajax support
+- Fully accessible by keyboard
+- Auto Height and fixed height mode
+
+## Plugin dependencies
+- jDrawer.css 
+- jDrawer.js 
+- jQuery.js (any version)
+
 ## Possible upcoming Features 
     
-    - [Greensock](http://www.greensock.com/http://www.greensock.com/)animation plugin for better mobile scrolling performance 
-    - (Possible) Manual resizing of fixed height drawers via drag and drop
-    - (Possible) tab transition animations
+- [Greensock](http://www.greensock.com/http://www.greensock.com/) animation plugin for better mobile scrolling performance 
+- (Possible) Manual resizing of fixed height drawers via drag and drop
+- (Possible) tab transition animations
 
 ## Tested on:
-    - Chrome - done
-    - Firefox - done
-    - iOS - done
-    - TO DO: IE8
-    - TO DO: Android
+- Chrome - done
+- Firefox - done
+- iOS - done
+- TO DO: IE8
+- TO DO: Android
            
-## Tutorial (coming soon)
-	
 
 
 
