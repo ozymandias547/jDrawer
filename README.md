@@ -42,6 +42,7 @@
 ## Tested on:
 - Chrome
 - Firefox
+- Safari
 - iOS (iPad and iPhone ready)
 - IE8
 - TO DO: IE9-11
